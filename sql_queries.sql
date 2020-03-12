@@ -34,11 +34,15 @@ CREATE TABLE `eCommerceShop`.`product` (
   `order_date` datetime NULL,
   PRIMARY KEY (`ordersID`));
   
-    insert into customer (name,address,email_address) values ('dave','1 wallaby lane','dave@wallabylane.com');
     
         CREATE TABLE `eCommerceShop`.`order_items` (
   `orderitemsID` INT NOT NULL AUTO_INCREMENT,
   `product_ID` INT NULL,
   `quantity` INT NULL,
   PRIMARY KEY (`orderitemsID`));
+  
+  insert into orders (orders.customer_ID,orders.order_date) values (1,'2020-03-12 13:17:17');
+  insert into order_items (order_items.product_ID,order_items.quantity) values (3,50);
+  
+  update product SET stock_quantity = 0 where productID = 1;
 
